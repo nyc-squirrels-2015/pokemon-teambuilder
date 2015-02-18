@@ -1,0 +1,8 @@
+<% @pokemons.each do |mon| %>
+  #<%= mon.id %>  -  <%= mon.name %><br>
+    <img src="<%= mon.photo_url %>"><br>
+    <%= mon.primary_type %>
+    <% if mon.secondary_type != nil %>
+      / <%= mon.secondary_type %>
+    <% end %><br><br>
+<% end %>
