@@ -10,7 +10,6 @@ post '/' do
   else
     redirect '/'
   end
-
   redirect '/menu'
 end
 
