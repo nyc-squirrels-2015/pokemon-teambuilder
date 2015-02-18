@@ -1,4 +1,6 @@
 get '/menu' do
+  @i = 0
+  @teams = Team.all
   erb :menu
 end
 

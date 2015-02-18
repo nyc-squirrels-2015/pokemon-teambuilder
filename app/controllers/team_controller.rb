@@ -6,7 +6,7 @@ end
 
 get '/teams/new' do
   @pokemon = Pokemon.all
-  erb :'team/new_team'
+  erb :'team/new_team', layout: false
 end
 
 post '/teams/new' do
@@ -32,6 +32,9 @@ put '/teams/:id' do
     counter += 1
     t_member.update(pokemon_id: params[("pokemon" + counter.to_s).to_sym])
   end
+
+
+
   redirect "/teams/#{params[:id]}"
 end
 
@@ -43,5 +46,5 @@ end
 delete '/teams/:id' do
   TeamMember.delete_all(team_id: params[:id])
   Team.delete(params[:id])
-  redirect 'teams'
+  redirect '/teams'
 end
