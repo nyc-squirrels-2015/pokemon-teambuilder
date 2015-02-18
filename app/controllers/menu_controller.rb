@@ -1,10 +1,14 @@
 get '/menu' do
   @i = 0
   @teams = Team.all
-  erb :menu
+  if current_user.id == session[:user_id]
+    erb :menu
+  end
 end
 
 get '/pokemons' do
   @pokemons = Pokemon.all
-  erb :all_pokemon
+  if current_user.id == session[:user_id]
+    erb :all_pokemon
+  end
 end

@@ -1,12 +1,16 @@
 get '/teams' do
   @i = 0
   @teams = Team.all
-  erb :'team/teams'
+  if current_user.id == session[:user_id]
+    erb :'team/teams'
+  end
 end
 
 get '/teams/new' do
   @pokemon = Pokemon.all
-  erb :'team/new_team', layout: false
+  if current_user.id == session[:user_id]
+    erb :'team/new_team', layout: false
+  end
 end
 
 post '/teams/new' do
@@ -25,7 +29,9 @@ get '/teams/:id/edit' do
   @i = 0
   @pokemon = Pokemon.all
   @team = Team.find(params[:id])
-  erb :'team/edit_team'
+  if current_user.id == session[:user_id]
+    erb :'team/edit_team'
+  end
 end
 
 put '/teams/:id' do
@@ -43,7 +49,9 @@ end
 
 get '/teams/:id' do
   @team = Team.find(params[:id])
-  erb :'team/individual_team'
+  if current_user.id == session[:user_id]
+    erb :'team/individual_team'
+  end
 end
 
 delete '/teams/:id' do
