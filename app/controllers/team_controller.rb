@@ -18,7 +18,7 @@ post '/teams/new' do
   team = Team.create(user_id: session[:user_id])
   p params
   6.times do |i|
-    i + 1
+    i += 1
     new_team(i, team)
   end
   erb :'team/_append_new_team', locals: {team: team}, layout: false
@@ -42,9 +42,14 @@ put '/teams/:id' do
     t_member.update(pokemon_id: params[("pokemon" + counter.to_s).to_sym])
   end
 
-
-
   redirect "/teams/#{params[:id]}"
+end
+
+post '/teams/:id' do
+  p params
+  team = Team.find(params[:id])
+  TeamMember.create(team_id: params[:id], pokemon_id: params[:pokemon])
+  redirect back
 end
 
 get '/teams/:id' do

@@ -1,5 +1,6 @@
-<!-- <div id="pokemon<%= number %>">
-  <select name="pokemon<%= number %>">
+<div id="pokemon<%= number %>">
+  <form id="add_btn_form" method="POST">
+  <select name="pokemon">
     <option selected disabled>Pokemon <%= number %></option>
     <% @pokemon.each do |mon| %>
     <option value="<%= mon.id %>"><%= mon.name %></option>
@@ -7,9 +8,8 @@
   </select>
 
 <div id="add_btn">
-  <form id="add_btn_form">
-    <input type="submit" value="Add">
+    <input type="submit" value="Save">
   </form>
 </div>
 
-</div> -->
+</div>
