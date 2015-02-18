@@ -11,11 +11,12 @@ end
 
 post '/teams/new' do
   team = Team.create(user_id: session[:user_id])
+  p params
   6.times do |i|
     i + 1
     new_team(i, team)
   end
-  redirect "/teams/#{team.id}"
+  # redirect "/teams/#{team.id}"
 end
 
 get '/teams/:id/edit' do
@@ -46,5 +47,5 @@ end
 delete '/teams/:id' do
   TeamMember.delete_all(team_id: params[:id])
   Team.delete(params[:id])
-  redirect '/teams'
+  redirect '/menu'
 end

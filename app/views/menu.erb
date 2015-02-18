@@ -1,11 +1,14 @@
 <div id="menu">
 
-  <a href="/teams"><h3>See my teams</h3></a>
+  <!-- <a href="/teams"><h3>See my teams</h3></a> -->
   <a href="/pokemons"><h3>See all pokemon</h3></a>
   <a id="new_team_btn" href="/teams/new"><h3>Build new team</h3></a>
 </div>
-
-
+<br>
+<div id="main_teams">
+<h3>Your teams:</h3>
+<%= erb :'team/teams' %>
+</div>
 <div id="logout">
   <a href="/logout">Logout</a>
 </div>

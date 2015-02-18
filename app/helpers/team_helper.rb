@@ -1,8 +1,5 @@
 def new_team(number, team)
-  select = ("pokemon" + number.to_s).to_sym
-  if params[select]
-    TeamMember.create(team_id: team.id, pokemon_id: params[select])
+  if params["pokemon"][number.to_s]
+    TeamMember.create(team_id: team.id, pokemon_id: params["pokemon"][number.to_s])
   end
 end
-
-# def update_team(number, team)

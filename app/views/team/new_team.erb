@@ -1,5 +1,5 @@
 <div id="select_new_team">
-<form method="POST" action="/teams/new">
+<form id="create_new_team" method="POST" action="/teams/new">
   <% 6.times do |i| %>
     <%= erb :'team/_select_menu', locals: {number: i + 1} %>
   <% end %>
