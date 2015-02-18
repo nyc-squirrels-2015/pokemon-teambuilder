@@ -1,0 +1,10 @@
+<div id="individual_team">
+  <% @team.pokemon.each do |member| %>
+    #<%= member.id %>  -  <%= member.name %><br>
+    <img src="<%= member.photo_url %>"><br>
+    <%= member.primary_type %>
+    <% if member.secondary_type != nil %>
+      / <%= member.secondary_type %>
+    <% end %><br><br>
+  <% end %>
+</div>
