@@ -1,4 +1,4 @@
-User.create(name: :Ivan, email: "ivan@gmail.com", password: "123")
+User.create(name: :Ivan, email: "ivan@gmail.com", password: "123", password_confirmation: "123")
 
 Pokemon.create(name: :Bulbasaur, primary_type: :Grass, secondary_type: :Poison, photo_url: "http://icons.iconarchive.com/icons/hektakun/pokemon/72/001-Bulbasaur-icon.png")
 Pokemon.create(name: :Ivysaur, primary_type: :Grass, secondary_type: :Poison, photo_url: "http://icons.iconarchive.com/icons/hektakun/pokemon/72/002-Ivysaur-icon.png")
