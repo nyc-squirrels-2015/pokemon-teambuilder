@@ -4,6 +4,7 @@ get '/teams' do
 end
 
 get '/teams/new' do
+  @pokemon = Pokemon.all
   erb :'team/new_team'
 end
 
