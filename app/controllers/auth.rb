@@ -1,11 +1,15 @@
 get '/' do
-  erb :welcome
+  erb :'login/login'
 end
 
-get '/login' do
-  
+post '/' do
+
 end
 
 get '/signup' do
-  
+ erb :'login/signup'
+end
+
+post '/signup' do
+
 end
