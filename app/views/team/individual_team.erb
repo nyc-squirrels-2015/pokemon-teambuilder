@@ -5,6 +5,17 @@
     <%= member.primary_type %>
     <% if member.secondary_type != nil %>
       / <%= member.secondary_type %>
-    <% end %><br><br>
+    <% end %><br>
   <% end %>
+</div>
+
+<div id="edit_team">
+  <a href="/teams/<%= @team.id %>/edit">Edit team</a>
+</div>
+
+<div id="delete_team">
+  <form method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete team">
+  </form>
 </div>
