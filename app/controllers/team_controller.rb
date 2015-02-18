@@ -10,12 +10,14 @@ get '/teams/new' do
 end
 
 post '/teams/new' do
+  @i = Team.all.count + 1
   team = Team.create(user_id: session[:user_id])
   p params
   6.times do |i|
     i + 1
     new_team(i, team)
   end
+  erb :'team/_append_new_team', locals: {team: team}, layout: false
   # redirect "/teams/#{team.id}"
 end
 
