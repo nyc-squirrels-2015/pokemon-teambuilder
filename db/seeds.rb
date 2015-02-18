@@ -12,7 +12,6 @@ Pokemon.create(name: :Blastoise, primary_type: :Water, photo_url: "http://icons.
 
 
 TeamMember.create(team_id: 1, pokemon_id: 1)
-TeamMember.create(team_id: 1, pokemon_id: 1)
 TeamMember.create(team_id: 1, pokemon_id: 4)
 TeamMember.create(team_id: 1, pokemon_id: 7)
 

@@ -1,1 +1,10 @@
-teams erb
+<div id="teams">
+  <ul>
+    <% @teams.each do |team| %>
+      <li><h3><a href="/teams/<%= team.id %>">Team <%= team.id %></h3></li>
+        <% team.pokemon.each do |member| %>
+          <img src="<%= member.photo_url %>">
+      <% end %></a>
+    <% end %>
+  </ul>
+</div>
