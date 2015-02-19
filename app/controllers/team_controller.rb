@@ -1,14 +1,14 @@
 get '/teams' do
   @i = 0
   @teams = Team.all
-  if current_user.id == session[:user_id]
+  if current_user
     erb :'team/teams'
   end
 end
 
 get '/teams/new' do
   @pokemon = Pokemon.all
-  if current_user.id == session[:user_id]
+  if current_user
     erb :'team/new_team', layout: false
   end
 end
@@ -21,15 +21,18 @@ post '/teams/new' do
     i += 1
     new_team(i, team)
   end
-  erb :'team/_append_new_team', locals: {team: team}, layout: false
-  # redirect "/teams/#{team.id}"
+  if request.xhr?
+  return erb :'team/_append_new_team', locals: {team: team}, layout: false
+  else
+    redirect "/teams/#{team.id}"
+  end
 end
 
 get '/teams/:id/edit' do
   @i = 0
   @pokemon = Pokemon.all
   @team = Team.find(params[:id])
-  if current_user.id == session[:user_id]
+  if current_user
     erb :'team/edit_team'
   end
 end
@@ -54,7 +57,7 @@ end
 
 get '/teams/:id' do
   @team = Team.find(params[:id])
-  if current_user.id == session[:user_id]
+  if current_user
     erb :'team/individual_team'
   end
 end
