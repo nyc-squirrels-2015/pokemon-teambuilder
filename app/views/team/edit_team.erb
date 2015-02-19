@@ -1,23 +1,23 @@
 <div id="update_team">
-  <form method="POST" action="/teams/<%= @team.id %>">
+<form method="POST" action="/teams/<%= @team.id %>">
 
-<div id="edit_team_selector">
- <% @team.pokemon.each do |member| %>
-    <% @i += 1 %>
+  <div id="edit_team_selector">
+    <% @team.pokemon.each do |member| %>
+      <% @i += 1 %>
 
-    <select name="pokemon<%= @i %>">
-    <option value="<%= member.id %>" selected><%= member.name %></option>
-    <% @pokemon.each do |mon| %>
-    <% if mon.id != member.id %>
-    <option value="<%= mon.id %>"><%= mon.name %></option>
+      <select name="pokemon<%= @i %>">
+        <option value="<%= member.id %>" selected><%= member.name %></option>
+        <% @pokemon.each do |mon| %>
+          <% if mon.id != member.id %>
+            <option value="<%= mon.id %>"><%= mon.name %></option>
+          <% end %>
+        <% end %>
+      </select><br>
+
     <% end %>
-    <% end %>
-    </select><br>
+  </div>
 
-  <% end %>
-</div>
-
-    <input type="hidden" name="_method" value="PUT">
-    <input type="submit" value="Update team">
-  </form>
+  <input type="hidden" name="_method" value="PUT">
+  <input type="submit" value="Update team">
+</form>
 </div>

@@ -1,5 +1,6 @@
+<%# hate this variable name, @i ? %>
 <li><h3><a href="/teams/<%= team.id %>">Team <%= @i %></h3></li>
 
 <% team.pokemon.each do |member| %>
-<img src="<%= member.photo_url %>">
+  <img src="<%= member.photo_url %>">
 <% end %></a>

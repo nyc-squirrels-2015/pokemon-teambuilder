@@ -31,6 +31,9 @@ $("#menu").on("submit", "#create_new_team", function(event){
  }).done(function(response){
   $("#main_teams").append(response)
  })
+
+ // always add a fail() condition.  So that when your ajax fails (which it
+ // might, perfect though you might be, you will know where to start debugging)
 })
 
 

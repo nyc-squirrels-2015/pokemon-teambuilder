@@ -1,6 +1,7 @@
 <div id="teams">
   <ul>
     <% @teams.each do |team| %>
+      <%# generally we don't want to be adjusting instance variables' value in the view, this should be done ahead of time in the controllerl %>
       <% @i += 1 %>
       <li><h3><a href="/teams/<%= team.id %>">Team <%= @i %></h3></li>
         <% team.pokemon.each do |member| %>
