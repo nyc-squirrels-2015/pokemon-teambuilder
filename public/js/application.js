@@ -65,6 +65,12 @@ $("#menu").on("submit", "#create_new_team", function(event){
     })
   })
 
+  $("html").on("click", "#create_new_team_btn", function(){
+    $('html, body').animate({scrollTop:$(document).height()}, 'slow');
+  })
+
+
+
 //   $("#individual_team").on("submit", "#add_btn_form", function(event){
 //     event.preventDefault();
 
